@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="custom_view_partner_form" model="ir.ui.view">
+        <field name="name">custom.res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="gstin_number"/>
+                <field name="is_manufacturer" invisible="company_type=='company'"/>
+                <field name="email_p" 
+                    widget="email" context="{'gravatar_image': True}"
+                    invisible="company_type=='company'"/>
+                <field name="fax"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
