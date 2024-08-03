@@ -31,8 +31,18 @@
     'maintainer': 'Mohamed Moustafa Alkobrosli',
     'website': "https://www.kobros-tech.com",
     'license': "AGPL-3",
-    'depends': ['base', 'contacts', 'om_account_accountant', ],
+    'depends': [
+        'base', 
+        'contacts', 
+        'om_account_accountant', 
+        'sale_management',
+        'sale_pdf_quote_builder',
+        'purchase',
+    ],
     'data': [
         "views/res_partner_views.xml",
+        "report/ir_actions_report.xml",
+        "report/purchase_reports.xml",
+        "report/account_report.xml",
     ],
 }
