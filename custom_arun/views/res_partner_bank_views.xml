@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="custom_view_res_bank_form" model="ir.ui.view">
+        <field name="name">custom.res.bank.form</field>
+        <field name="model">res.bank</field>
+        <field name="inherit_id" ref="base.view_res_bank_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bic']" position="after">
+                <field name="ifsc_code"/>
+                <field name="cif_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="custom_view_partner_bank_form_inherit_account" model="ir.ui.view">
+        <field name="name">custom.res.partner.bank.form.inherit.account</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="account.view_partner_bank_form_inherit_account"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bank_id']" position="after">
+                <field name="street" invisible="not bank_id"/>
+                <field name="street2" invisible="not bank_id"/>
+                <field name="city" invisible="not bank_id"/>
+                <field name="state" invisible="not bank_id"/>
+                <field name="country" invisible="not bank_id"/>
+                <field name="bic" invisible="not bank_id"/>
+                <field name="ifsc_code" invisible="not bank_id"/>
+                <field name="cif_id" invisible="not bank_id"/>
+                <field name="phone" invisible="not bank_id"/>
+                <field name="email" invisible="not bank_id"/>
+                <field name="active"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

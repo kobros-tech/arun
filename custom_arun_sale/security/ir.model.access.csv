@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_type_portal,sale.type.portal,model_sale_type,base.group_portal,1,0,0,0
+access_sale_type_readonly,sale.type.accountant,model_sale_type,account.group_account_readonly,1,0,0,0
+access_sale_type_invoicing_payments,sale.type,model_sale_type,account.group_account_invoice,1,1,0,0
+access_sale_type_accountant,sale.type.accountant,model_sale_type,account.group_account_user,1,1,0,0
+access_sale_type,sale.type,model_sale_type,sales_team.group_sale_salesman,1,1,1,0
+access_sale_type_manager,sale.type.manager,model_sale_type,sales_team.group_sale_manager,1,1,1,1

@@ -22,9 +22,9 @@
 #############################################################################
 
 {
-    'name': "Custom module Mr. Arun",
+    'name': "Custom sale module Mr. Arun",
     'description': """
-        Custom module Mr. Arun
+        Custom sale module Mr. Arun
     """,
     'author': 'Abou Sajid (Mohamed Alkobrosli)',
     'company': 'kobros-tech',
@@ -32,20 +32,11 @@
     'website': "https://www.kobros-tech.com",
     'license': "AGPL-3",
     'depends': [
-        'base', 
-        'contacts',
-        'account', 
-        'om_account_accountant', 
-        'sale_management',
-        'sale_pdf_quote_builder',
-        'purchase',
+        'sale',
     ],
     'data': [
-        "views/res_partner_views.xml",
-        "views/res_partner_bank_views.xml",
+        "security/ir.model.access.csv",
 
-        "report/ir_actions_report.xml",
-        "report/purchase_reports.xml",
-        "report/account_report.xml",
+        "views/sale_order_views.xml",
     ],
 }
