@@ -33,6 +33,10 @@
     'license': "AGPL-3",
     'depends': [
         'sale',
+        'sale_management',
+        'stock',
+        'sale_stock',
+        'custom_arun',
     ],
     'data': [
         "security/ir.model.access.csv",

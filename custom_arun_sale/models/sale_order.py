@@ -20,10 +20,12 @@ class SaleOrder(models.Model):
         string="Sale Type",
     )
 
-    bank_id = fields.Many2one(
-        "res.partner.bank",
-        string="Bank",
-        domain="[('partner_id', '=', partner_id)]"
-    )
+    bank_id = fields.Many2one("res.bank")
 
+
+    @api.onchange('sale_type_id')
+    def _onchange_sale_type_id(self):
+        for rec in self:
+            if rec.sale_type_id and rec.sale_type_id.note:
+                rec.note = rec.sale_type_id.note
     
