@@ -35,14 +35,13 @@
         'base', 
         'contacts',
         'account', 
-        'om_account_accountant', 
         'sale_management',
         'sale_pdf_quote_builder',
         'purchase',
     ],
     'data': [
         "views/res_partner_views.xml",
-        "views/res_partner_bank_views.xml",
+        "views/res_bank_views.xml",
 
         "report/ir_actions_report.xml",
         "report/purchase_reports.xml",

@@ -25,6 +25,21 @@
                 <field name="sale_type_id"/>
                 <field name="bank_id"/>
             </field>
+
+            <field name="price_subtotal" position="attributes">
+                <attribute name="invisible"></attribute>
+            </field>
+
+            <xpath expr="//tree/field[@name='name']" position="after">
+                <field name="layout_category_id"/>
+                <field name="manufacturer" />
+                <field name="condition"/>
+            </xpath>
+
+            <xpath expr="//tree/field[@name='price_subtotal']" position="after">
+                <field name="commission_status" optional="hide"/>
+                <field name="remark" optional="hide"/>
+            </xpath>
         </field>
     </record>
 </odoo>
