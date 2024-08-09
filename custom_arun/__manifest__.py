@@ -34,16 +34,13 @@
     'depends': [
         'base', 
         'contacts',
-        'account', 
-        'sale_management',
-        'sale_pdf_quote_builder',
+        'account',
         'purchase',
     ],
     'data': [
         "views/res_partner_views.xml",
         "views/res_bank_views.xml",
 
-        "report/ir_actions_report.xml",
         "report/purchase_reports.xml",
         "report/account_report.xml",
     ],

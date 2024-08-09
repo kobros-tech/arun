@@ -8,7 +8,7 @@
     "category": "Product",
     "website": "https://github.com/OCA/product-attribute",
     "author": "ForgeFlow, Odoo Community Association (OCA)",
-    "maintainers": ["LoisRForgeFlow"],
+    "maintainers": ["LoisRForgeFlow", "kobros-tech"],
     "license": "AGPL-3",
     "application": False,
     "installable": True,

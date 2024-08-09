@@ -33,6 +33,7 @@
     'license': "AGPL-3",
     'depends': [
         'sale',
+        'sale_pdf_quote_builder',
         'sale_management',
         'stock',
         'sale_stock',
@@ -42,5 +43,8 @@
         "security/ir.model.access.csv",
 
         "views/sale_order_views.xml",
+
+        "report/ir_actions_report_templates.xml",
+        "report/ir_actions_report.xml",
     ],
 }
