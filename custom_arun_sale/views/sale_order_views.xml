@@ -16,7 +16,10 @@
 
             <field name="partner_shipping_id" position="after">
                 <field name="sale_type_id"/>
+                <field name="client_no"/>
+                <field name="client_dt"/>
                 <field name="bank_id"/>
+                <field name="quote_subject"/>
             </field>
 
             <field name="price_subtotal" position="attributes">

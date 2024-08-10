@@ -6,6 +6,7 @@ class SaleOrder(models.Model):
     
     client_no = fields.Char(string="Client PO No.")
     client_dt = fields.Date(string="Client PO Dt.")
+    quote_subject = fields.Char(string="Quote Subject")
     sale_type_id = fields.Many2one(
         "sale.type",
         string="Sale Type",
@@ -22,4 +23,6 @@ class SaleOrder(models.Model):
 
     def amount_in_words(self, price):
         return num2words(price, to='cardinal')
+
+    
     
