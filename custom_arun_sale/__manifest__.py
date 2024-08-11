@@ -44,6 +44,7 @@
 
         "views/sale_order_views.xml",
 
+        "report/report_templates.xml",
         "report/ir_actions_report_templates.xml",
         "report/ir_actions_report.xml",
     ],
