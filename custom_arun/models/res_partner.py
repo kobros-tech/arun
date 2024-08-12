@@ -15,6 +15,7 @@ class Partner(models.Model):
     is_manufacturer = fields.Boolean()
     email = fields.Char(string='Email (O)')
     email_p = fields.Char(string='Email (P)')
+    # website = fields.Char(copy=True)
     fax = fields.Char()
 
     def copy(self, default=None):
