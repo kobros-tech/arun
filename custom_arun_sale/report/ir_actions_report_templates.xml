@@ -20,8 +20,11 @@
                 <!-- col -->
                 <div class="col-auto col-4">
                     <strong>Customer Adderss:</strong>
+                    <div><span t-field="doc.partner_id.name"></span></div>
+                    <div>(M): <span t-field="doc.partner_id.mobile"></span></div>
+                    <div>E-Mail: <span t-field="doc.partner_id.email"></span></div>
                     <div t-field="doc.partner_id"
-                        t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                        t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}' />
                 </div><!-- end of col -->
 
                 <t t-if="doc.partner_shipping_id == doc.partner_invoice_id
@@ -39,16 +42,22 @@
                                     Invoicing Address:
                                 </t>
                             </strong>
+                            <div><span t-field="doc.partner_invoice_id.name"></span></div>
+                            <div>(M): <span t-field="doc.partner_invoice_id.mobile"></span></div>
+                            <div>E-Mail: <span t-field="doc.partner_invoice_id.email"></span></div>
                             <div t-field="doc.partner_invoice_id"
-                                t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                                t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}' />
                         </div><!-- end of col -->
 
                         <!-- col -->
                         <div class="col-auto col-4">
                             <t t-if="doc.partner_shipping_id != doc.partner_invoice_id">
                                 <strong>Shipping Address:</strong>
+                                <div><span t-field="doc.partner_shipping_id.name"></span></div>
+                                <div>(M): <span t-field="doc.partner_shipping_id.mobile"></span></div>
+                                <div>E-Mail: <span t-field="doc.partner_shipping_id.email"></span></div>
                                 <div t-field="doc.partner_shipping_id"
-                                    t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                                    t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}' />
                             </t>
                         </div><!-- end of col -->
                     <!-- </t> -->
@@ -82,10 +91,11 @@
                         <span class="m-0" t-field="doc.validity_date">2023-12-31</span>
                     </div>
                     <div t-if="doc.user_id.name" class="col-auto col-3 mw-100 mb-2">
-                        <strong>Sales Manager:</strong><br/>
-                        <span class="m-0" t-field="doc.user_id">Mitchell Admin</span>
-                        <div t-out="doc.user_id.partner_id" 
-                            t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
+                        <strong>Sales Manager: <span class="m-0" t-field="doc.user_id.partner_id.name"></span></strong><br/>
+                        <strong>(M): <span class="m-0" t-field="doc.user_id.partner_id.mobile"></span></strong><br/>
+                        <strong>Land.No: <span class="m-0" t-field="doc.user_id.partner_id.phone"></span></strong><br/>
+                        <strong>Position: <span class="m-0" t-field="doc.user_id.partner_id.function"></span></strong><br/>
+                        <strong>E-Mail: <span class="m-0" t-field="doc.user_id.partner_id.email"></span></strong><br/>
                     </div>
 
                     <div class="col-auto col-3 mw-100 mb-2">
@@ -105,25 +115,25 @@
                 </div>
 
                 <div class="oe_structure"></div>
-                <table class="table table-sm o_main_table table-borderless mt-4">
+                <table class="table table-sm o_main_table mt-4" style="border-top: 1px solid black;">
                     <!-- In case we want to repeat the header, remove "display: table-row-group" -->
                     
                     
                         <thead style="display: table-row-group">
                             <tr>
-                                <th name="th_index" class="text-start">SL No.</th>
-                                <th name="th_part_no" class="text-start">Part No.</th>
-                                <th name="th_manf" class="text-start">Manf.</th>
-                                <th name="th_description" class="text-start">Description</th>
-                                <th name="th_quantity" class="text-end">Qty</th>
-                                <th name="th_condition" class="text-end">Cond.</th>
-                                <th name="th_priceunit" class="text-end">Unit Price</th>
-                                <th name="th_discount" t-if="display_discount" class="text-end">
+                                <th name="th_index" class="text-center">SL No.</th>
+                                <th name="th_part_no" class="text-center">Part No.</th>
+                                <th name="th_manf" class="text-center">Manf.</th>
+                                <th name="th_description" class="text-center">Description</th>
+                                <th name="th_quantity" class="text-center">Qty</th>
+                                <th name="th_condition" class="text-center">Cond.</th>
+                                <th name="th_priceunit" class="text-center">Unit Price</th>
+                                <th name="th_discount" t-if="display_discount" class="text-center">
                                     <span>Disc.%</span>
                                 </th>
-                                <th name="th_taxes" class="text-end">Taxes</th>
-                                <th name="th_tax_amount" class="text-end">Tax Amount</th>
-                                <th name="th_subtotal" class="text-end">
+                                <th name="th_taxes" class="text-center">Taxes</th>
+                                <th name="th_tax_amount" class="text-center">Tax Amount</th>
+                                <th name="th_subtotal" class="text-center">
                                     <span>Amount</span>
                                 </th>
                             </tr>
@@ -142,28 +152,28 @@
                                         <td name="td_part_no"><span t-field="line.product_id"></span></td>
                                         <td name="td_manf"><span t-field="line.manufacturer"></span></td>
                                         <td name="td_name"><span t-field="line.name"></span></td>
-                                        <td name="td_quantity" class="text-end">
+                                        <td name="td_quantity" class="text-center">
                                             <span t-field="line.product_uom_qty">3</span>
                                             <span t-field="line.product_uom">units</span>
                                             <span t-if="line.product_packaging_id">
                                                 (<span t-field="line.product_packaging_qty" t-options='{"widget": "integer"}'/> <span t-field="line.product_packaging_id"/>)
                                             </span>
                                         </td>
-                                        <td name="td_condition" class="text-end"><span t-field="line.condition"></span></td>
-                                        <td name="td_priceunit" class="text-end">
+                                        <td name="td_condition" class="text-center"><span t-field="line.condition"></span></td>
+                                        <td name="td_priceunit" class="text-center">
                                             <span t-field="line.price_unit">3</span>
                                         </td>
-                                        <td t-if="display_discount" class="text-end">
+                                        <td t-if="display_discount" class="text-center">
                                             <span t-field="line.discount">-</span>
                                         </td>
                                         <t t-set="taxes" t-value="', '.join([(tax.invoice_label or tax.name) for tax in line.tax_id])"/>
-                                        <td name="td_taxes" t-attf-class="text-end {{ 'text-nowrap' if len(taxes) &lt; 10 else '' }}">
+                                        <td name="td_taxes" t-attf-class="text-center {{ 'text-nowrap' if len(taxes) &lt; 10 else '' }}">
                                             <span t-out="taxes">Tax 15%</span>
                                         </td>
-                                        <td name="td_tax_amount" t-attf-class="text-end {{ 'text-nowrap' if len(taxes) &lt; 10 else '' }}">
+                                        <td name="td_tax_amount" t-attf-class="text-center {{ 'text-nowrap' if len(taxes) &lt; 10 else '' }}">
                                             <span t-out="line.tax_id.amount * current_subtotal / 100"></span>
                                         </td>
-                                        <td t-if="not line.is_downpayment" name="td_subtotal" class="text-end o_price_total">
+                                        <td t-if="not line.is_downpayment" name="td_subtotal" class="text-center o_price_total">
                                             <span t-field="line.price_subtotal">27.00</span>
                                         </td>
                                     </t>
@@ -182,7 +192,7 @@
                                 </tr>
 
                                 <t t-if="current_section and (line_last or lines_to_report[line_index+1].display_type == 'line_section') and not line.is_downpayment">
-                                    <tr class="is-subtotal text-end">
+                                    <tr class="is-subtotal text-center">
                                         <td name="td_section_subtotal" colspan="99">
                                             <strong class="mr16">Subtotal</strong>
                                             <span
@@ -212,7 +222,7 @@
 
                 <div>
                     <strong>Amount in words:</strong><br/>
-                    <span t-out="doc.amount_in_words(doc.tax_totals['amount_total'])"></span>
+                    <span class="text-capitalize" t-out="doc.amount_in_words(doc.tax_totals['amount_total'])"></span>
                     <span t-field="doc.pricelist_id.currency_id">USD</span>
                 </div>
 
