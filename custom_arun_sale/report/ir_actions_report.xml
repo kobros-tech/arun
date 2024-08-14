@@ -18,7 +18,7 @@
         <field name="dpi">90</field>
     </record>
 
-    <!-- <record id="sale_pdf_quote_builder.action_report_saleorder_raw" model="ir.actions.report">
+    <record id="sale_pdf_quote_builder.action_report_saleorder_raw" model="ir.actions.report">
         <field name="name">Quotation / Order</field>
         <field name="model">sale.order</field>
         <field name="report_type">qweb-pdf</field>
@@ -31,7 +31,7 @@
         <field name="binding_model_id" ref="sale.model_sale_order"/>
         <field name="binding_type">report</field>
         <field name="paperformat_id" ref="custom_arun_sale.paperformat_custom_arun_sale"/>
-    </record> -->
+    </record>
 
     <record id="sale.action_report_saleorder" model="ir.actions.report">
         <field name="name">Quotation / Order</field>
