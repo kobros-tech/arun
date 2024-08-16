@@ -32,11 +32,13 @@
     'website': "https://www.kobros-tech.com",
     'license': "AGPL-3",
     'depends': [
+        'product',
         'account',
         'sale',
         'custom_arun_sale',
     ],
     'data': [
-        "views/account_move_views.xml"
+        "views/account_move_views.xml",
+        "views/product_template_views.xml",
     ],
 }
