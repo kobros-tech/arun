@@ -9,10 +9,6 @@ class SaleOrder(models.Model):
 
     def _prepare_invoice(self):
         values = super()._prepare_invoice()
-
-        print("=============================")
-        print("values before: ", values)
-        print(self.client_no, self.client_dt)
         
         if self.client_no:
             values['client_no'] = self.client_no
@@ -38,12 +34,7 @@ class SaleOrder(models.Model):
 
         if active_picking_id:
             values['dc_no'] = active_picking_id.name
-            values['dc_dt'] = active_picking_id.date_done
-        
-        print("values after: ", values)
-        print(self.picking_ids)
-        print("active stock picking: ", active_picking_id)
-        print("=============================")
+            values['dc_dt'] = active_picking_id.scheduled_date
 
         return values
     
