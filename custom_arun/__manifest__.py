@@ -34,7 +34,6 @@
     'depends': [
         'base', 
         'contacts',
-        'account',
         'purchase',
         'crm',
     ],
@@ -43,6 +42,5 @@
         "views/res_bank_views.xml",
 
         "report/purchase_reports.xml",
-        "report/account_report.xml",
     ],
 }

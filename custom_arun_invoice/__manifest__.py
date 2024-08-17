@@ -40,5 +40,8 @@
     'data': [
         "views/account_move_views.xml",
         "views/product_template_views.xml",
+
+        "report/report_invoice.xml",
+        "report/account_report.xml",
     ],
 }

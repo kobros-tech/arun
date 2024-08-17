@@ -14,4 +14,9 @@ class AccountMoveLine(models.Model):
         string="HSN Code",
         related="product_id.hsn_code",
     )
+    condition = fields.Many2one(
+        'product.condition',
+        string="Condition",
+        readonly=True,
+    )
 

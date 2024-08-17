@@ -23,6 +23,7 @@
             </xpath>
 
             <xpath expr="//page//tree/field[@name='price_subtotal']" position="after">
+                <field name="condition" optional="hide"/>
                 <field name="commission_status" optional="hide"/>
             </xpath>
         </field>
