@@ -222,8 +222,8 @@
 
                 <div>
                     <strong>Amount in words:</strong><br/>
-                    <span class="text-capitalize" t-out="doc.amount_in_words(doc.tax_totals['amount_total'])"></span>
-                    <span t-field="doc.pricelist_id.currency_id">USD</span>
+                    <t t-set="amount_total" t-value="doc.tax_totals['amount_total']"/>
+                    <span t-esc="doc.pricelist_id.currency_id.amount_to_text(amount_total).replace(',', '')"></span>
                 </div>
 
                 <div class="oe_structure"></div>

@@ -20,6 +20,9 @@ class SaleOrderLine(models.Model):
         if self.commission_status:
             res['commission_status'] = self.commission_status
 
+        if self.condition:
+            res['condition'] = self.condition.id
+
         print("values after: ", res)
         print("=============================")
 
