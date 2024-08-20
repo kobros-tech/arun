@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="custom_view_picking_form" model="ir.ui.view">
+        <field name="name">stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="partner_0_id"/>
+                <field name="partner_invoice_id"/>
+                <field name="client_no"/>
+                <field name="client_dt"/>
+                <field name="is_grn"/>
+                <field name="remarks"/>
+                <field name="sale_type_id"/>
+                <field name="remarks"/>
+            </xpath>
+
+            <!-- <xpath expr="//page//tree//field[@name='product_id']" position="after">
+                <field name="manufacturer"/>
+                <field name="hsn_code"/>
+            </xpath> -->
+
+        </field>
+    </record>
+</odoo>
