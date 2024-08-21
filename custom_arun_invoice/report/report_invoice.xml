@@ -70,7 +70,12 @@
                                         Client Billing Address:
                                     </t>
                                 </strong>
-                                <div><span t-field="doc.partner_invoice_id.name"></span></div>
+                                <div>
+                                    <t t-if="doc.partner_invoice_id.parent_name">
+                                        <span t-field="doc.partner_invoice_id.parent_name"/><span>, </span>
+                                    </t>
+                                    <span t-field="doc.partner_invoice_id.name"></span>
+                                </div>
                                 <div>(M): <span t-field="doc.partner_invoice_id.mobile"></span></div>
                                 <div>E-Mail: <span t-field="doc.partner_invoice_id.email"></span></div>
                                 <div t-field="doc.partner_invoice_id"
@@ -81,7 +86,12 @@
                             <div class="col-auto col-4">
                                 <t t-if="doc.partner_shipping_id != doc.partner_invoice_id">
                                     <strong>Shipping Address:</strong>
-                                    <div><span t-field="doc.partner_shipping_id.name"></span></div>
+                                    <div>
+                                        <t t-if="doc.partner_shipping_id.parent_name">
+                                            <span t-field="doc.partner_shipping_id.parent_name"/><span>, </span>
+                                        </t>
+                                        <span t-field="doc.partner_shipping_id.name"></span>
+                                    </div>
                                     <div>(M): <span t-field="doc.partner_shipping_id.mobile"></span></div>
                                     <div>E-Mail: <span t-field="doc.partner_shipping_id.email"></span></div>
                                     <div t-field="doc.partner_shipping_id"
@@ -94,7 +104,12 @@
                         <!-- col -->
                         <div class="col-auto col-4">
                             <strong>Shipping Address:</strong>
-                            <div><span t-field="doc.partner_shipping_id.name"></span></div>
+                            <div>
+                                <t t-if="doc.partner_shipping_id.parent_name">
+                                    <span t-field="doc.partner_shipping_id.parent_name"/><span>, </span>
+                                </t>
+                                <span t-field="doc.partner_shipping_id.name"></span>
+                            </div>
                             <div>(M): <span t-field="doc.partner_shipping_id.mobile"></span></div>
                             <div>E-Mail: <span t-field="doc.partner_shipping_id.email"></span></div>
                             <div t-field="doc.partner_shipping_id"
@@ -177,7 +192,7 @@
                             <div class="col-auto col-6 mb-5">
                                 <strong>Customer Name: </strong><span t-field="o.partner_id.name"></span><br/>
                                 <strong>Tel/Mob No.: </strong><span t-field="o.partner_id.phone"></span><span t-field="o.partner_id.mobile"></span><br/>
-                                <strong>GSTN No.: </strong><span t-field="o.partner_id.gstin_number"></span><br/>
+                                <strong>GSTN No.: </strong><span t-field="o.partner_id.vat"></span><br/>
                                 <strong>Client PO No.: </strong><span t-field="o.client_no"></span><br/>
                                 <strong>Client PO Date.: </strong><span t-field="o.client_dt"></span><br/>
                             </div><!-- end of col -->

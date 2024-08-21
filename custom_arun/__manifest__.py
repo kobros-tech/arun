@@ -34,12 +34,16 @@
     'depends': [
         'base', 
         'contacts',
+        'product',
         'purchase',
         'crm',
     ],
     'data': [
+        "security/ir.model.access.csv",
+        
         "views/res_partner_views.xml",
         "views/res_bank_views.xml",
+        "views/product_template_views.xml",
 
         "report/purchase_reports.xml",
     ],

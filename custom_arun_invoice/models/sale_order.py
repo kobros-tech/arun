@@ -35,6 +35,15 @@ class SaleOrder(models.Model):
         if active_picking_id:
             values['dc_no'] = active_picking_id.name
             values['dc_dt'] = active_picking_id.scheduled_date
+        
+        if self.partner_id:
+            values['partner_id'] = self.partner_id.id
+        
+        if self.partner_shipping_id:
+            values['partner_shipping_id'] = self.partner_shipping_id.id
+        
+        if self.partner_invoice_id:
+            values['partner_invoice_id'] = self.partner_invoice_id.id
 
         return values
     

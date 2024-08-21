@@ -177,7 +177,7 @@
                             <div class="col-auto col-6 mb-5">
                                 <strong>Customer Name: </strong><span t-field="o.partner_id.name"></span><br/>
                                 <strong>Tel/Mob No.: </strong><span t-field="o.partner_id.phone"></span><span t-field="o.partner_id.mobile"></span><br/>
-                                <strong>GSTN No.: </strong><span t-field="o.partner_id.gstin_number"></span><br/>
+                                <strong>GSTN No.: </strong><span t-field="o.partner_id.vat"></span><br/>
                                 <strong>Client PO No.: </strong><span t-field="o.client_no"></span><br/>
                                 <strong>Client PO Date.: </strong><span t-field="o.client_dt"></span><br/>
                             </div><!-- end of col -->
