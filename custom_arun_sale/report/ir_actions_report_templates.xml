@@ -20,7 +20,12 @@
                 <!-- col -->
                 <div class="col-auto col-4">
                     <strong>Customer Adderss:</strong>
-                    <div><span t-field="doc.partner_id.name"></span></div>
+                    <div>
+                        <t t-if="doc.partner_id.parent_name">
+                            <span t-field="doc.partner_id.parent_name"/><span>, </span>
+                        </t>
+                        <span t-field="doc.partner_id.name"/>
+                    </div>
                     <div>(M): <span t-field="doc.partner_id.mobile"></span></div>
                     <div>E-Mail: <span t-field="doc.partner_id.email"></span></div>
                     <div t-field="doc.partner_id"
@@ -42,7 +47,12 @@
                                     Invoicing Address:
                                 </t>
                             </strong>
-                            <div><span t-field="doc.partner_invoice_id.name"></span></div>
+                            <div>
+                                <t t-if="doc.partner_invoice_id.parent_name">
+                                    <span t-field="doc.partner_invoice_id.parent_name"/><span>, </span>
+                                </t>
+                                <span t-field="doc.partner_invoice_id.name"/>
+                            </div>
                             <div>(M): <span t-field="doc.partner_invoice_id.mobile"></span></div>
                             <div>E-Mail: <span t-field="doc.partner_invoice_id.email"></span></div>
                             <div t-field="doc.partner_invoice_id"
@@ -53,7 +63,12 @@
                         <div class="col-auto col-4">
                             <t t-if="doc.partner_shipping_id != doc.partner_invoice_id">
                                 <strong>Shipping Address:</strong>
-                                <div><span t-field="doc.partner_shipping_id.name"></span></div>
+                                <div>
+                                    <t t-if="doc.partner_shipping_id.parent_name">
+                                        <span t-field="doc.partner_shipping_id.parent_name"/><span>, </span>
+                                    </t>
+                                    <span t-field="doc.partner_shipping_id.name"/>
+                                </div>
                                 <div>(M): <span t-field="doc.partner_shipping_id.mobile"></span></div>
                                 <div>E-Mail: <span t-field="doc.partner_shipping_id.email"></span></div>
                                 <div t-field="doc.partner_shipping_id"

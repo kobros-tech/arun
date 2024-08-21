@@ -37,7 +37,6 @@
     ],
     'data': [
         "views/stock_picking_views.xml",
-        # "views/product_template_views.xml",
 
         # "report/report_invoice.xml",
         # "report/account_report.xml",

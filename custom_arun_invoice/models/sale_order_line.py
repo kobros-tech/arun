@@ -14,14 +14,14 @@ class SaleOrderLine(models.Model):
         print("values before: ", res)
         print(self.manufacturer)
 
-        if self.manufacturer:
-            res['manufacturer'] = self.manufacturer.id
+        # if self.manufacturer:
+        #     res['manufacturer'] = self.manufacturer.id
         
         if self.commission_status:
             res['commission_status'] = self.commission_status
 
-        if self.condition:
-            res['condition'] = self.condition.id
+        # if self.condition:
+        #     res['condition'] = self.condition.id
 
         print("values after: ", res)
         print("=============================")

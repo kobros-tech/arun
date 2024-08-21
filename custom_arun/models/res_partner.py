@@ -10,12 +10,11 @@ class Partner(models.Model):
     _sql_constraints = [
         ("check_name", "UNIQUE(name)", "The name must be unique"),
     ]
-
-    gstin_number = fields.Char(string='GSTIN Number')
+    
+    vat = fields.Char(string='GSTIN Number')
     is_manufacturer = fields.Boolean()
     email = fields.Char(string='Email (O)')
     email_p = fields.Char(string='Email (P)')
-    # website = fields.Char(copy=True)
     fax = fields.Char()
 
     def copy(self, default=None):
