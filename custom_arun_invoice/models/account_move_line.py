@@ -4,6 +4,11 @@ from odoo import api, fields, models, Command, _
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
+    description = fields.Char(
+        string="Description",
+        related="product_id.description",
+        readonly=True,
+    )
     manufacturer = fields.Many2one(
         "res.partner", 
         string="Manuf.",
