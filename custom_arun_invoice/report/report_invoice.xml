@@ -80,6 +80,7 @@
                                 <div>E-Mail: <span t-field="doc.partner_invoice_id.email"></span></div>
                                 <div t-field="doc.partner_invoice_id"
                                     t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}' />
+                                <div>GSTIN: <span t-field="doc.partner_invoice_id.vat"></span></div>
                             </div><!-- end of col -->
 
                             <!-- col -->
@@ -125,6 +126,7 @@
                         <div>E-Mail: <span t-field="doc.partner_id.email"></span></div>
                         <div t-field="doc.partner_id"
                             t-options='{"widget": "contact", "fields": ["address"], "no_marker": True}' />
+                        <div>GSTIN: <span t-field="doc.partner_id.vat"></span></div>
                     </div><!-- end of col -->
 
                 </div><!-- end of row -->
@@ -144,7 +146,7 @@
                             <span t-elif="o.move_type == 'in_invoice'">Vendor Bill</span>
                             <span t-if="o.name != '/'" t-field="o.name">INV/2023/0001</span>
 
-                            <span t-if="o.so_name"> - Sales</span>
+                            <span t-if="o.so_name">- Sales</span>
                         </h2>
                         
                         <div class="oe_structure"></div>
@@ -255,7 +257,7 @@
                                             <td name="account_invoice_line_part_no" class="text-center"><span t-if="line.product_id" t-field="line.product_id"></span></td>
                                             <td name="account_invoice_line_hsn_code" class="text-center"><span t-if="line.hsn_code" t-field="line.hsn_code"></span></td>
                                             
-                                            <td name="account_invoice_line_name" class="text-center"><span t-if="line.name" t-field="line.name" t-options="{'widget': 'text'}">Bacon Burger</span></td>
+                                            <td name="account_invoice_line_description" class="text-center"><span t-if="line.description" t-field="line.description" t-options="{'widget': 'text'}">Bacon Burger</span></td>
                                             
                                             <!-- create a field condition in line -->
                                             <td name="account_invoice_line_condition" class="text-center"><span t-if="line.condition" t-field="line.condition"></span></td>
@@ -324,6 +326,7 @@
                             <div class="col-auto col-6">
                                 
                                 <div>
+                                    <!-- tax and total dictionary -->
                                     <t t-set="tax_totals" t-value="o.tax_totals"/>
 
                                     <table class="table table-sm table-borderless mb-0">
@@ -353,16 +356,16 @@
                                                             <strong>
                                                                 <span t-out="amount_by_group['tax_group_name']">Tax 15%</span>
                                                                 <span> on </span>
-                                                                <span class="text-nowrap" t-out="amount_by_group['tax_group_base_amount_company_currency']"
-                                                                    t-options='{"widget": "monetary", "display_currency": o.company_currency_id}'>
+                                                                <span class="text-nowrap" t-out="amount_by_group['tax_group_amount']"
+                                                                    t-options='{"widget": "monetary", "display_currency": o.currency_id}'>
                                                                     27.00
                                                                 </span>
                                                             </strong>
                                                         </td>
                                                         <td class="text-end o_price_total">
                                                             <span class="text-nowrap"
-                                                                t-out="amount_by_group['tax_group_amount_company_currency']"
-                                                                t-options='{"widget": "monetary", "display_currency": o.company_currency_id}'
+                                                                t-out="amount_by_group['tax_group_amount']"
+                                                                t-options='{"widget": "monetary", "display_currency": o.currency_id}'
                                                             >4.05</span>
                                                         </td>
                                                     </t>
@@ -370,8 +373,8 @@
                                                         <td><strong><span class="text-nowrap" t-out="amount_by_group['tax_group_name']"/></strong></td>
                                                         <td class="o_price_total">
                                                             <span class="text-nowrap"
-                                                                t-out="amount_by_group['tax_group_amount_company_currency']"
-                                                                t-options='{"widget": "monetary", "display_currency": o.company_currency_id}'
+                                                                t-out="amount_by_group['tax_group_amount']"
+                                                                t-options='{"widget": "monetary", "display_currency": o.currency_id}'
                                                             >31.05</span>
                                                         </td>
                                                     </t>
@@ -382,8 +385,8 @@
                                         <tr class="border-black o_total">
                                             <td><strong>Total Inv. Value:</strong></td>
                                             <td>
-                                                <span t-out="abs(o.amount_total_signed)"
-                                                    t-options='{"widget": "monetary", "display_currency": o.company_currency_id}'>
+                                                <span t-out="abs(o.amount_total)"
+                                                    t-options='{"widget": "monetary", "display_currency": o.currency_id}'>
                                                 31.05</span>
                                             </td>
                                         </tr>
