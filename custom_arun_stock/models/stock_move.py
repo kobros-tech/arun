@@ -9,9 +9,9 @@ class StockMove(models.Model):
 
     product_id = fields.Many2one(string="Part No.",)
     
-    description = fields.Char(
+    description0 = fields.Char(
         string="Description",
-        related="product_id.description",)
+        related="product_id.description0",)
 
     manufacturer = fields.Many2one(
         comodel_name='res.partner',

@@ -11,9 +11,9 @@ class ProductProduct(models.Model):
         readonly=False,
     )
 
-    description= fields.Char(
+    description0 = fields.Char(
         string="Description",
-        related="product_tmpl_id.description",
+        related="product_tmpl_id.description0",
         readonly=False,
     )
 

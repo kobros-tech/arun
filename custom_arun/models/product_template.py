@@ -6,7 +6,7 @@ class ProductTemplate(models.Model):
 
     hsn_code = fields.Char(string="HSN Code")
 
-    description= fields.Char(string="Description")
+    description0 = fields.Char(string="Description")
 
     manufacturer = fields.Many2one(
         "res.partner", 

@@ -4,9 +4,9 @@ from odoo import api, fields, models, _
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
-    description = fields.Char(
+    description0 = fields.Char(
         string="Description",
-        related="product_template_id.description",
+        related="product_template_id.description0",
         readonly=False,
     )
 

@@ -4,9 +4,9 @@ from odoo import api, fields, models, Command, _
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
-    description = fields.Char(
+    description0 = fields.Char(
         string="Description",
-        related="product_id.description",
+        related="product_id.description0",
         readonly=True,
     )
     manufacturer = fields.Many2one(
