@@ -8,7 +8,7 @@
         <field name="priority" eval="5"/>
         <field name="arch" type="xml">
             <group name="group_general" position="inside">
-                <field name="description"/>
+                <field name="description0"/>
                 <field name="hsn_code"/>
                 <field name="manufacturer"/>
                 <field name="condition"/>
@@ -24,7 +24,7 @@
         <field name="priority" eval="5"/>
         <field name="arch" type="xml">
             <group name="group_general" position="inside">
-                <field name="description"/>
+                <field name="description0"/>
                 <field name="hsn_code"/>
                 <field name="manufacturer"/>
                 <field name="condition"/>

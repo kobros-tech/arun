@@ -27,7 +27,7 @@
             </field>
 
             <xpath expr="//tree/field[@name='name']" position="after">
-                <field name="description"/>
+                <field name="description0"/>
                 <field name="layout_category_id"/>
                 <field name="manufacturer" context="{'default_is_manufacturer': True}"/>
                 <field name="condition"/>
