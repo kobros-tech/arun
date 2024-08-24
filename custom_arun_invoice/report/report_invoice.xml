@@ -257,7 +257,7 @@
                                             <td name="account_invoice_line_part_no" class="text-center"><span t-if="line.product_id" t-field="line.product_id"></span></td>
                                             <td name="account_invoice_line_hsn_code" class="text-center"><span t-if="line.hsn_code" t-field="line.hsn_code"></span></td>
                                             
-                                            <td name="account_invoice_line_description" class="text-center"><span t-if="line.description" t-field="line.description" t-options="{'widget': 'text'}">Bacon Burger</span></td>
+                                            <td name="account_invoice_line_description" class="text-center"><span t-if="line.description0" t-field="line.description0" t-options="{'widget': 'text'}">Bacon Burger</span></td>
                                             
                                             <!-- create a field condition in line -->
                                             <td name="account_invoice_line_condition" class="text-center"><span t-if="line.condition" t-field="line.condition"></span></td>
