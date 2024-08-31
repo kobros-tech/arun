@@ -1,34 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="custom_product_template_form_view" model="ir.ui.view">
-        <field name="name">custom.product.template.common.form</field>
+        <field name="name">custom.product.template.product.form</field>
         <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
         <field name="mode">primary</field>
-        <field name="priority" eval="5"/>
+        <field name="priority" eval="8"/>
         <field name="arch" type="xml">
-            <group name="group_general" position="inside">
-                <field name="description0"/>
-                <field name="hsn_code"/>
-                <field name="manufacturer"/>
-                <field name="condition"/>
-            </group>
+            <xpath expr="//page[@name='variants']" position="before">
+                <page string="Extra Info" name="custom">
+                    <group>
+                        <group string="Product">
+                            <field name="description0"/>
+                            <field name="hsn_code"/>
+                            <field name="condition"/>
+                        </group>
+                        <group string="Manufacturer">
+                            <field name="manufacturer"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
         </field>
     </record>
+
 
     <record id="custom_product_product_form_view" model="ir.ui.view">
         <field name="name">custom.product.product.common.form</field>
         <field name="model">product.product</field>
-        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
         <field name="mode">primary</field>
-        <field name="priority" eval="5"/>
+        <field name="priority" eval="7"/>
         <field name="arch" type="xml">
-            <group name="group_general" position="inside">
-                <field name="description0"/>
-                <field name="hsn_code"/>
-                <field name="manufacturer"/>
-                <field name="condition"/>
-            </group>
+            <xpath expr="//page[@name='general_information']" position="after">
+                <page string="Extra Info" name="custom">
+                    <group>
+                        <group string="Product">
+                            <field name="description0"/>
+                            <field name="hsn_code"/>
+                            <field name="condition"/>
+                        </group>
+                        <group string="Manufacturer">
+                            <field name="manufacturer"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
         </field>
     </record>
+
 </odoo>
