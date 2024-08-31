@@ -84,7 +84,7 @@
             <div class="page">
                 <div class="oe_structure"/>
                 
-                <h2 class="mt-4">
+                <h2 class="mt-4 text-center">
                     <span t-if="env.context.get('proforma', False) or is_pro_forma">Pro-Forma Invoice # </span>
                     <span t-elif="doc.state in ['draft','sent']">Request for Quotation # </span>
                     <span t-else="">Sales Order # </span>
