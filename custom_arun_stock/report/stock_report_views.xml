@@ -13,6 +13,7 @@
             <field name="print_report_name">'Picking Operations - %s - %s' % (object.partner_id.name or '', object.name)</field>
             <field name="binding_model_id" ref="model_stock_picking"/>
             <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="custom_arun_sale.paperformat_custom_arun_sale"/>
         </record>
 
         <record id="custom_report_picking_2" model="ir.actions.report">
